@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Landmarks</th>
+      </tr>
+      <% @figures.each do |e| %>
+      <tr>
+        <td><%= e.name %>(<a href='/figures/<%= e.id %>/edit'>edit</a>)<br></td>
+
+      </tr>
+      <tr>
+          <td><% e.landmarks.each do |i| %>
+            <%= i.name %><td> (<a href='/landmarks/<%= i.id %>/edit'>edit</a>)<br>
+            <% end %>
+          </td>
+      </tr>
+      <% end %>
+    <table>
+  </body>
+</html>

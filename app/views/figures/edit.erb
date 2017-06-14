@@ -1,0 +1,22 @@
+<html>
+  <form method='POST' action='/figures/<%= @figure.id %>'>
+    <p><h2><label>Figure Name:</label></h2>
+    <input type='text' name='figure[name]' id='figure_name' value='<%= @figure.name %>'></p>
+    <p><h2><label>Figure's titles:</label></h2>
+      <%@titles.each do |i|%>
+          <input type="checkbox" name="figure[title_ids][]" value="<%=i.id%>" id="title_<%=i.id%>" <%='checked' if @figure.titles.include?(i) %>><%=i.name%></input>
+      <%end%>
+      <br><h2><label>New Title?</label></h2>
+      <input type='text' name='title[name]' id='new_title'></p></p>
+    <p><h2><label>Landmark Associated with Figure</label></h2>
+      <%@landmarks.each do |e|%>
+          <input type="checkbox" name="figure[landmark_ids][]" value="<%=e.id%>" id="landmark_<%=e.id%>" <%='checked' if @figure.landmarks.include?(e) %>><%=e.name%></input>
+      <%end%></p>
+    <br><h2><label>New Landmark?</label></h2>
+    <input type='text' name='landmark[name]' id='new_landmark'></p>
+    <p><h2><label>Year Completed</label></h2>
+    <input type='text' name='landmark[year_completed]' id='landmark_year_completed'></p>
+    <input type='submit' value='Edit Figure'><br>
+    <a href='/figures'>Click here to view all figures.</a>
+  </form>
+</html>

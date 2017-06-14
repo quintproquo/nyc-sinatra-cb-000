@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Landmarks</th>
+  </tr>
+  <tr>
+    <td><%= @figure.name %> (<a href='/figures/<%= @figure.id %>/edit'>edit</a>)<br></td>
+  </tr>
+  <tr>
+      <td><% @figure.landmarks.each do |i| %>
+        <%= i.name %><td> (<a href='/landmarks/<%= i.id %>/edit'>edit</a>)<br>
+        <% end %>
+      </td>
+  </tr>
+<table>

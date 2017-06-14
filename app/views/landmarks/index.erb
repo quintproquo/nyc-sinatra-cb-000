@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Year Completed</th>
+      </tr>
+      <% @landmarks.each do |e| %>
+      <tr>
+        <td><%= e.name %></td>
+        <td><%= e.year_completed %></td>
+        <td>(<a href='/landmarks/<%= e.id %>/edit'>edit</a>)</td>
+      </tr>
+      <% end %>
+    <table>
+  </body>
+</html>
